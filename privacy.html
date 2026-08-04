@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>개인정보 처리방침 — Horang</title>
+  <link rel="icon" type="image/png" href="icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=1.0.4">
+  <style>
+    .privacy-container {
+      max-width: 760px;
+      margin: 120px auto 80px auto;
+      padding: 40px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+    }
+    .privacy-container h1 { font-size: 1.8rem; font-weight: 800; margin-bottom: 8px; color: var(--text-main); }
+    .privacy-subtitle { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border-color); }
+    .privacy-container h2 { font-size: 1.1rem; font-weight: 700; margin: 24px 0 8px 0; color: var(--text-main); }
+    .privacy-container p, .privacy-container li { font-size: 0.92rem; color: var(--text-muted); line-height: 1.7; }
+    .privacy-container ul { margin-left: 20px; margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-brand">
+        <img src="icon.png" alt="호랑 로고" class="brand-icon">
+        <span class="brand-name">Horang</span>
+      </a>
+      <a href="index.html" class="btn btn-primary">← 돌아가기</a>
+    </div>
+  </header>
+
+  <div class="privacy-container">
+    <h1>개인정보 처리방침</h1>
+    <p class="privacy-subtitle">마지막 업데이트: 2026년 8월 4일</p>
+
+    <p>Horang은 사용자의 프라이버시를 존중하며 데이터의 안전성을 최우선으로 설계된 데스크톱 앱입니다.</p>
+
+    <h2>1. 로컬 데이터 보관 (온디바이스 Storage)</h2>
+    <p>모든 커미션 내역, 가계부, 일정 및 메모는 사용자의 PC 내부 로컬 데이터베이스(SQLite-WASM)에만 저장됩니다. 사용자의 개인 데이터는 외부 개발자 서버로 전송되거나 수집되지 않습니다.</p>
+
+    <h2>2. 필수 외부 네트워크 통신 안내</h2>
+    <p>앱의 원활한 기능 제공을 위해 아래 2가지 기능 이용 시에만 최소한의 공식 API 통신이 수행됩니다:</p>
+    <ul>
+      <li><strong>실시간 환율 정보 조회:</strong> 페이팔 정산 및 외화 환산 계산을 위해 공식 환율 정보 API 수신 통신이 수행됩니다.</li>
+      <li><strong>Gemini AI 기능 연동 (BYOK):</strong> 사용자가 직접 등록한 개인 Gemini API 키를 통해 번역, 의뢰 분석, 가격표 생성 요청 시 텍스트/이미지 정보가 구글 AI 서버로 전송됩니다.</li>
+    </ul>
+
+    <h2>3. 데이터 관리 및 삭제</h2>
+    <p>모든 개인 데이터는 사용자의 PC에 완전히 종속 보관되므로, 앱 삭제 시 로컬 데이터베이스와 함께 즉시 제거됩니다.</p>
+  </div>
+</body>
+</html>
