@@ -1,258 +1,495 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>호랑 (Horang) — 프리랜서를 위한 커미션 정산 앱</title>
-  <meta name="description" content="프리랜서를 위한 커미션 정산 데스크톱 앱 호랑. 분할 결제, 수수료 산출, 가계부 연동, AI 자동 등록.">
-  <link rel="icon" type="image/png" href="icon.png">
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
-  
-  <!-- Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  
-  <link rel="stylesheet" href="style.css?v=1.0.5">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>호랑 (Horang) — 프리랜서를 위한 커미션 정산 앱</title>
+    <meta
+      name="description"
+      content="프리랜서를 위한 커미션 정산 데스크톱 앱 호랑. 분할 결제, 수수료 산출, 가계부 연동, AI 자동 등록."
+    />
+    <link rel="icon" type="image/png" href="icon.png" />
 
-  <!-- Navigation -->
-  <header class="navbar">
-    <div class="container nav-container">
-      <a href="#" class="nav-brand">
-        <img src="icon.png" alt="호랑 로고" class="brand-icon">
-        <span class="brand-name">Horang <span class="brand-tag">v0.101.3</span></span>
-      </a>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
-      <nav class="nav-menu">
-        <a href="#features">주요 기능</a>
-        <a href="#ai-suite">AI 기능</a>
-        <a href="#faq">FAQ</a>
-      </nav>
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-      <div class="nav-actions">
-        <!-- Theme Toggle Button -->
-        <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="테마 전환" title="테마 전환">
-          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-        </button>
-
-        <a href="https://github.com/zx3519-star/horang-releases/releases/latest/download/horang-0.101.3-setup.exe" class="btn btn-primary">
-          <i data-lucide="download"></i>
-          <span>다운로드</span>
+    <link rel="stylesheet" href="style.css?v=1.0.5" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header class="navbar">
+      <div class="container nav-container">
+        <a href="#" class="nav-brand">
+          <img src="icon.png" alt="호랑 로고" class="brand-icon" />
+          <span class="brand-name">Horang <span class="brand-tag">v0.101.3</span></span>
         </a>
+
+        <nav class="nav-menu">
+          <a href="#screens">화면 둘러보기</a>
+          <a href="#features">주요 기능</a>
+          <a href="#ai-suite">AI 기능</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <div class="nav-actions">
+          <!-- Theme Toggle Button -->
+          <button
+            id="themeToggleBtn"
+            class="theme-toggle-btn"
+            aria-label="테마 전환"
+            title="테마 전환"
+          >
+            <svg
+              class="icon-moon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+            </svg>
+            <svg
+              class="icon-sun"
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2" />
+              <path d="M12 20v2" />
+              <path d="m4.93 4.93 1.41 1.41" />
+              <path d="m17.66 17.66 1.41 1.41" />
+              <path d="M2 12h2" />
+              <path d="M20 12h2" />
+              <path d="m6.34 17.66-1.41 1.41" />
+              <path d="m19.07 4.93-1.41 1.41" />
+            </svg>
+          </button>
+
+          <a
+            href="https://github.com/zx3519-star/horang-releases/releases/latest/download/horang-0.101.3-setup.exe"
+            class="btn btn-primary"
+          >
+            <i data-lucide="download"></i>
+            <span>다운로드</span>
+          </a>
+        </div>
       </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero reveal">
+      <div class="container hero-container">
+        <div class="hero-badge">
+          <img src="mascot.svg" alt="도우미" class="badge-mascot-img" />
+          <span>Horang Desktop</span>
+        </div>
+        <h1 class="hero-title">프리랜서를 위한<br />커미션 정산 워크스페이스</h1>
+        <p class="hero-desc">커미션 관리, 통계, 고객 관리, 가계부, 일정관리까지 한 번에</p>
+
+        <div class="hero-cta-group">
+          <a
+            href="https://github.com/zx3519-star/horang-releases/releases/latest/download/horang-0.101.3-setup.exe"
+            class="btn btn-hero-primary"
+          >
+            <i data-lucide="download"></i>
+            <span>Windows용 다운로드 (.exe)</span>
+          </a>
+        </div>
+
+        <!-- SmartScreen Reassurance Notice & Network Transparency -->
+        <div class="download-notice">
+          <i data-lucide="info" class="notice-icon"></i>
+          <span
+            >코드 서명 미적용으로 인한 <strong>Windows SmartScreen 경고창</strong>이 표시될 수
+            있습니다. 개인 데이터는 PC 내부에만 저장되며,
+            <u>실시간 환율 조회 및 Gemini AI 사용 시에만 필수 외부 통신</u>이 진행되는 안전한
+            프로그램입니다. (설치 시 <u>[추가 정보] → [실행]</u> 클릭)</span
+          >
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item"><i data-lucide="shield-check"></i> 100% 로컬 데이터 저장</div>
+          <div class="stat-item"><i data-lucide="sparkles"></i> Gemini AI 지원</div>
+          <div class="stat-item"><i data-lucide="coins"></i> 수수료 &amp; 정산 관리</div>
+        </div>
+
+        <!-- Hero App Preview Mockup -->
+        <div class="hero-preview-wrapper reveal delay-2">
+          <div class="app-window-frame">
+            <div class="app-window-header">
+              <div class="window-controls">
+                <span class="control red"></span>
+                <span class="control yellow"></span>
+                <span class="control green"></span>
+              </div>
+              <div class="window-title">Horang - 커미션 관리 대시보드</div>
+            </div>
+            <div class="app-window-body">
+              <img src="shot_dashboard.png" alt="호랑 커미션 대시보드 화면" class="preview-img" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Grid Section -->
+    <section id="features" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">주요 기능</h2>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card reveal delay-1">
+            <div class="feature-icon-box"><i data-lucide="layers"></i></div>
+            <h3>커미션 관리</h3>
+            <p>복잡한 유형, 옵션관리를 손쉽게, 통계도 한 눈에</p>
+          </div>
+
+          <div class="feature-card reveal delay-2">
+            <div class="feature-icon-box"><i data-lucide="credit-card"></i></div>
+            <h3>손쉬운 정산 관리</h3>
+            <p>옵션 별 가격 자동 계산과 선금/잔금 등 분할 정산 기능 및 가계부 자동 연동</p>
+          </div>
+
+          <div class="feature-card reveal delay-1">
+            <div class="feature-icon-box"><i data-lucide="dollar-sign"></i></div>
+            <h3>페이팔 수수료 예측</h3>
+            <p>페이팔 결제시 환율마진과 수수료를 계산하여 실수령액을 예측</p>
+          </div>
+
+          <div class="feature-card reveal delay-2">
+            <div class="feature-icon-box"><i data-lucide="calendar"></i></div>
+            <h3>일정관리</h3>
+            <p>커미션 스케쥴을 놓치지 않고 편하게 관리</p>
+          </div>
+
+          <div class="feature-card feature-card-wide reveal delay-3">
+            <div class="feature-icon-box"><i data-lucide="image"></i></div>
+            <div class="feature-wide-content">
+              <h3>가격표 자동 생성</h3>
+              <p>등록한 유형 및 옵션을 토대로 가격표 이미지를 자동 생성.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screenshots Showcase Section -->
+    <section id="screens" class="section screens-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">실제 앱 화면 둘러보기</h2>
+          <p class="section-desc">작가님들의 실제 커미션 워크플로우에 맞춘 깔끔하고 직관적인 UX</p>
+        </div>
+
+        <!-- Showcase Tabs -->
+        <div class="showcase-tabs reveal">
+          <button class="tab-btn active" data-tab="tab-dashboard">
+            <i data-lucide="layout-dashboard"></i>
+            <span>대시보드 &amp; 통계</span>
+          </button>
+          <button class="tab-btn" data-tab="tab-modal">
+            <i data-lucide="plus-circle"></i>
+            <span>커미션 등록</span>
+          </button>
+          <button class="tab-btn" data-tab="tab-schedule">
+            <i data-lucide="calendar"></i>
+            <span>일정 캘린더</span>
+          </button>
+          <button class="tab-btn" data-tab="tab-customer">
+            <i data-lucide="users"></i>
+            <span>고객 관리</span>
+          </button>
+          <button class="tab-btn" data-tab="tab-settings">
+            <i data-lucide="settings"></i>
+            <span>단가/옵션 설정</span>
+          </button>
+        </div>
+
+        <!-- Showcase Cards Container -->
+        <div class="showcase-display reveal">
+          <!-- Tab 1: Dashboard -->
+          <div class="showcase-panel active" id="tab-dashboard">
+            <div class="showcase-grid">
+              <div class="showcase-info">
+                <span class="showcase-badge">한눈에 보는 매출 흐름</span>
+                <h3>실시간 통계 및 매출 트렌드 그래프</h3>
+                <p>총 커미션 건수, 총 매출, 평균 단가, 재구매 고객 수, 페이팔 수수료 및 환율 마진 손실액까지 한눈에 파악하세요.</p>
+                <ul class="showcase-list">
+                  <li><i data-lucide="check"></i> 1주/1개월/3개월/1년 선택형 기간별 추이 그래프</li>
+                  <li><i data-lucide="check"></i> 미수금 및 페이팔 실시간 수수료 자동 계산</li>
+                  <li><i data-lucide="check"></i> 재구매 고객 통계로 단골 관리 지원</li>
+                </ul>
+              </div>
+              <div class="showcase-image-box zoomable" data-src="shot_dashboard.png">
+                <img src="shot_dashboard.png" alt="대시보드 화면" />
+                <div class="zoom-overlay"><i data-lucide="zoom-in"></i> <span>확대해서 보기</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 2: New Commission Modal -->
+          <div class="showcase-panel" id="tab-modal">
+            <div class="showcase-grid">
+              <div class="showcase-info">
+                <span class="showcase-badge">쉬운 데이터 관리</span>
+                <h3>간편한 새 커미션 등록 모달</h3>
+                <p>고객 정보, 출처, 마감일, 캐릭터 유형 및 분할 결제 정보까지 필요한 정보를 한 폼에서 손쉽게 입력할 수 있습니다.</p>
+                <ul class="showcase-list">
+                  <li><i data-lucide="check"></i> 캐릭터별 옵션 및 가격 자동 합산</li>
+                  <li><i data-lucide="check"></i> 원화(KRW) / 달러(USD) 멀티 통화 지원</li>
+                  <li><i data-lucide="check"></i> 포트폴리오 공개 여부 및 작업 폴더 자동 연동</li>
+                </ul>
+              </div>
+              <div class="showcase-image-box zoomable" data-src="shot_modal.png">
+                <img src="shot_modal.png" alt="새 커미션 등록 모달 화면" />
+                <div class="zoom-overlay"><i data-lucide="zoom-in"></i> <span>확대해서 보기</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 3: Calendar -->
+          <div class="showcase-panel" id="tab-schedule">
+            <div class="showcase-grid">
+              <div class="showcase-info">
+                <span class="showcase-badge">마감 기한 완벽 준수</span>
+                <h3>직관적인 월별/주별 일정 캘린더</h3>
+                <p>커미션 마감일과 컨펌 일정, 정산일, 휴무일이 달력에 자동으로 배지 형태로 정리되어 마감을 놓치지 않습니다.</p>
+                <ul class="showcase-list">
+                  <li><i data-lucide="check"></i> 커미션 마감일 자동 연동 및 상태별 색상 구분</li>
+                  <li><i data-lucide="check"></i> 날짜 더블클릭으로 빠른 개인 일정/메모 추가</li>
+                  <li><i data-lucide="check"></i> 월/주/일 선택형 캘린더 뷰</li>
+                </ul>
+              </div>
+              <div class="showcase-image-box zoomable" data-src="shot_schedule.png">
+                <img src="shot_schedule.png" alt="일정 캘린더 화면" />
+                <div class="zoom-overlay"><i data-lucide="zoom-in"></i> <span>확대해서 보기</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 4: Customer Details -->
+          <div class="showcase-panel" id="tab-customer">
+            <div class="showcase-grid">
+              <div class="showcase-info">
+                <span class="showcase-badge">VIP 단골 케어</span>
+                <h3>고객별 주문 이력 &amp; 누적 매출 히스토리</h3>
+                <p>특정 고객의 전체 주문 이력, 총 누적 결제액, 현재 진행 중인 작업 상태를 체계적으로 기록합니다.</p>
+                <ul class="showcase-list">
+                  <li><i data-lucide="check"></i> 고객별 총 주문 건수 및 누적 결제 금액 집계</li>
+                  <li><i data-lucide="check"></i> 과거 의뢰 내역 및 마감일 D-Day 실시간 조회</li>
+                  <li><i data-lucide="check"></i> 연락처, 이메일, SNS 링크 간편 연결</li>
+                </ul>
+              </div>
+              <div class="showcase-image-box zoomable" data-src="shot_customer.png">
+                <img src="shot_customer.png" alt="고객 관리 화면" />
+                <div class="zoom-overlay"><i data-lucide="zoom-in"></i> <span>확대해서 보기</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 5: Settings -->
+          <div class="showcase-panel" id="tab-settings">
+            <div class="showcase-grid">
+              <div class="showcase-info">
+                <span class="showcase-badge">자유로운 커스텀</span>
+                <h3>맞춤형 기본 유형 &amp; 추가 옵션 설정</h3>
+                <p>두상, 상반신, 전신 등의 커미션 기본 단가표와 배경, 소품, 추가 인물 등의 옵션을 원하는 대로 자유롭게 세팅하세요.</p>
+                <ul class="showcase-list">
+                  <li><i data-lucide="check"></i> 캐릭터별 / 공통 적용 옵션 구분 설정</li>
+                  <li><i data-lucide="check"></i> 선화/채색 단계별 가격 세분화 지원</li>
+                  <li><i data-lucide="check"></i> 할인 및 할증 태그 커스텀 등록</li>
+                </ul>
+              </div>
+              <div class="showcase-image-box zoomable" data-src="shot_settings.png">
+                <img src="shot_settings.png" alt="커미션 설정 화면" />
+                <div class="zoom-overlay"><i data-lucide="zoom-in"></i> <span>확대해서 보기</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Suite Section -->
+    <section id="ai-suite" class="section">
+      <div class="container">
+        <div class="ai-box reveal">
+          <div class="section-header">
+            <span class="badge-ai"><i data-lucide="sparkles"></i> GEMINI AI</span>
+            <h2 class="section-title">AI 기능을 활용한 자동 등록</h2>
+            <p class="section-desc">개인 API 키(BYOK)를 등록하여 안전하게 이용하세요.</p>
+          </div>
+
+          <div class="ai-features-grid">
+            <div class="ai-card reveal delay-1">
+              <div class="ai-card-icon"><i data-lucide="file-plus-2"></i></div>
+              <h4>AI 커미션 자동 등록</h4>
+              <p>의뢰내용을 캡쳐하거나 붙여넣어서 자동으로 커미션 가격을 책정하여 등록.</p>
+            </div>
+
+            <div class="ai-card reveal delay-2">
+              <div class="ai-card-icon"><i data-lucide="file-input"></i></div>
+              <h4>기존 커미션 데이터 등록</h4>
+              <p>
+                기존 가격표(이미지, 글)를 분석해 자동으로 유형 및 옵션, 할인/할증 데이터를 자동으로
+                등록
+              </p>
+            </div>
+
+            <div class="ai-card reveal delay-3">
+              <div class="ai-card-icon"><i data-lucide="wand-2"></i></div>
+              <h4>AI 가격표 생성</h4>
+              <p>첫 커미션도 AI와 함께. 간단한 문답을 통해 가격표 생성.</p>
+            </div>
+
+            <div class="ai-card reveal delay-4">
+              <div class="ai-card-icon"><i data-lucide="languages"></i></div>
+              <h4>다국어 번역</h4>
+              <p>7개 언어 맥락 번역 및 톤 조절.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">자주 묻는 질문</h2>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item reveal delay-1">
+            <div class="faq-question">
+              <span>설치 시 'Windows의 PC 보호(SmartScreen)' 경고창이 떠요.</span>
+              <i data-lucide="chevron-down" class="faq-arrow"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                코드 서명 인증서(Code Signing Certificate)가 미적용되어 신규 설치 시 윈도우 보안
+                경고창이 표시될 수 있습니다. 개인 데이터 수집 서버가 전혀 없는 100% 안전한
+                애플리케이션이므로, 경고창의 <strong>[추가 정보]</strong>를 누르신 후
+                <strong>[실행]</strong> 버튼을 클릭하시면 정상적으로 설치가 진행됩니다.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal delay-2">
+            <div class="faq-question">
+              <span>데이터가 외부 서버로 전송되나요? (외부 통신 안내)</span>
+              <i data-lucide="chevron-down" class="faq-arrow"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                개인 커미션 내역, 가계부, 일정 및 메모는 100% 사용자의 PC 내부(SQLite DB)에만
+                저장되며 외부 수집 서버는 존재하지 않습니다. 다만
+                <strong>[실시간 환율 조회]</strong> 및
+                <strong>[Gemini AI 기능 이용 (BYOK)]</strong> 시에만 해당 공식 서비스와 최소한의
+                필수 외부 통신이 이루어집니다.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal delay-3">
+            <div class="faq-question">
+              <span>AI 기능 사용에 비용이 드나요?</span>
+              <i data-lucide="chevron-down" class="faq-arrow"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                구글에서 무료 발급받은 Gemini API 키를 등록(BYOK)하여 기본 제공 한도로 사용합니다.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal delay-4">
+            <div class="faq-question">
+              <span>지원되는 운영체제는 무엇인가요?</span>
+              <i data-lucide="chevron-down" class="faq-arrow"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Windows 10 / 11 환경을 지원합니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-card reveal">
+          <div class="cta-content">
+            <h2>지금 바로 시작해 보세요</h2>
+            <div class="cta-buttons">
+              <a
+                href="https://github.com/zx3519-star/horang-releases/releases/latest/download/horang-0.101.3-setup.exe"
+                class="btn btn-hero-primary"
+              >
+                <i data-lucide="download"></i>
+                <span>Windows용 다운로드 (.exe)</span>
+              </a>
+            </div>
+          </div>
+          <div class="cta-mascot-box">
+            <img src="mascot.svg" alt="마스코트" class="cta-mascot-img" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-brand">
+          <img src="icon.png" alt="호랑 로고" class="footer-icon" />
+          <span>Horang</span>
+        </div>
+        <p class="footer-copy">© 2026 Horang.</p>
+        <div class="footer-links">
+          <a href="terms.html">이용 정책</a>
+          <a href="privacy.html">개인정보 처리방침</a>
+          <a href="https://github.com/zx3519-star/horang-releases" target="_blank"
+            >GitHub Repository</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <!-- Image Lightbox Modal -->
+    <div id="imageLightbox" class="lightbox-modal">
+      <span class="lightbox-close">&times;</span>
+      <img class="lightbox-content" id="lightboxImg" alt="확대 이미지" />
     </div>
-  </header>
 
-  <!-- Hero Section -->
-  <section class="hero reveal">
-    <div class="container hero-container">
-      <div class="hero-badge">
-        <img src="mascot.svg" alt="도우미" class="badge-mascot-img">
-        <span>Horang Desktop</span>
-      </div>
-      <h1 class="hero-title">프리랜서를 위한<br>커미션 정산 워크스페이스</h1>
-      <p class="hero-desc">커미션 관리, 통계, 고객 관리, 가계부, 일정관리까지 한 번에</p>
-
-      <div class="hero-cta-group">
-        <a href="https://github.com/zx3519-star/horang-releases/releases/latest/download/horang-0.101.3-setup.exe" class="btn btn-hero-primary">
-          <i data-lucide="download"></i>
-          <span>Windows용 다운로드 (.exe)</span>
-        </a>
-      </div>
-
-      <!-- SmartScreen Reassurance Notice & Network Transparency -->
-      <div class="download-notice">
-        <i data-lucide="info" class="notice-icon"></i>
-        <span>코드 서명 미적용으로 인한 <strong>Windows SmartScreen 경고창</strong>이 표시될 수 있습니다. 개인 데이터는 PC 내부에만 저장되며, <u>실시간 환율 조회 및 Gemini AI 사용 시에만 필수 외부 통신</u>이 진행되는 안전한 프로그램입니다. (설치 시 <u>[추가 정보] → [실행]</u> 클릭)</span>
-      </div>
-
-      <div class="hero-stats">
-        <div class="stat-item"><i data-lucide="shield-check"></i> 100% 로컬 데이터 저장</div>
-        <div class="stat-item"><i data-lucide="sparkles"></i> Gemini AI 지원</div>
-        <div class="stat-item"><i data-lucide="coins"></i> 수수료 &amp; 정산 관리</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Feature Grid Section -->
-  <section id="features" class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <h2 class="section-title">주요 기능</h2>
-      </div>
-
-      <div class="features-grid">
-        <div class="feature-card reveal delay-1">
-          <div class="feature-icon-box"><i data-lucide="layers"></i></div>
-          <h3>커미션 관리</h3>
-          <p>복잡한 유형, 옵션관리를 손쉽게, 통계도 한 눈에</p>
-        </div>
-
-        <div class="feature-card reveal delay-2">
-          <div class="feature-icon-box"><i data-lucide="credit-card"></i></div>
-          <h3>손쉬운 정산 관리</h3>
-          <p>옵션 별 가격 자동 계산과 선금/잔금 등 분할 정산 기능 및 가계부 자동 연동</p>
-        </div>
-
-        <div class="feature-card reveal delay-1">
-          <div class="feature-icon-box"><i data-lucide="dollar-sign"></i></div>
-          <h3>페이팔 수수료 예측</h3>
-          <p>페이팔 결제시 환율마진과 수수료를 계산하여 실수령액을 예측</p>
-        </div>
-
-        <div class="feature-card reveal delay-2">
-          <div class="feature-icon-box"><i data-lucide="calendar"></i></div>
-          <h3>일정관리</h3>
-          <p>커미션 스케쥴을 놓치지 않고 편하게 관리</p>
-        </div>
-
-        <div class="feature-card feature-card-wide reveal delay-3">
-          <div class="feature-icon-box"><i data-lucide="image"></i></div>
-          <div class="feature-wide-content">
-            <h3>가격표 자동 생성</h3>
-            <p>등록한 유형 및 옵션을 토대로 가격표 이미지를 자동 생성.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- AI Suite Section -->
-  <section id="ai-suite" class="section">
-    <div class="container">
-      <div class="ai-box reveal">
-        <div class="section-header">
-          <span class="badge-ai"><i data-lucide="sparkles"></i> GEMINI AI</span>
-          <h2 class="section-title">AI 기능을 활용한 자동 등록</h2>
-          <p class="section-desc">개인 API 키(BYOK)를 등록하여 안전하게 이용하세요.</p>
-        </div>
-
-        <div class="ai-features-grid">
-          <div class="ai-card reveal delay-1">
-            <div class="ai-card-icon"><i data-lucide="file-plus-2"></i></div>
-            <h4>AI 커미션 자동 등록</h4>
-            <p>의뢰내용을 캡쳐하거나 붙여넣어서 자동으로 커미션 가격을 책정하여 등록.</p>
-          </div>
-
-          <div class="ai-card reveal delay-2">
-            <div class="ai-card-icon"><i data-lucide="file-input"></i></div>
-            <h4>기존 커미션 데이터 등록</h4>
-            <p>기존 가격표(이미지, 글)를 분석해 자동으로 유형 및 옵션, 할인/할증 데이터를 자동으로 등록</p>
-          </div>
-
-          <div class="ai-card reveal delay-3">
-            <div class="ai-card-icon"><i data-lucide="wand-2"></i></div>
-            <h4>AI 가격표 생성</h4>
-            <p>첫 커미션도 AI와 함께. 간단한 문답을 통해 가격표 생성.</p>
-          </div>
-
-          <div class="ai-card reveal delay-4">
-            <div class="ai-card-icon"><i data-lucide="languages"></i></div>
-            <h4>다국어 번역</h4>
-            <p>7개 언어 맥락 번역 및 톤 조절.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section id="faq" class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <h2 class="section-title">자주 묻는 질문</h2>
-      </div>
-
-      <div class="faq-list">
-        <div class="faq-item reveal delay-1">
-          <div class="faq-question">
-            <span>설치 시 'Windows의 PC 보호(SmartScreen)' 경고창이 떠요.</span>
-            <i data-lucide="chevron-down" class="faq-arrow"></i>
-          </div>
-          <div class="faq-answer">
-            <p>코드 서명 인증서(Code Signing Certificate)가 미적용되어 신규 설치 시 윈도우 보안 경고창이 표시될 수 있습니다. 개인 데이터 수집 서버가 전혀 없는 100% 안전한 애플리케이션이므로, 경고창의 <strong>[추가 정보]</strong>를 누르신 후 <strong>[실행]</strong> 버튼을 클릭하시면 정상적으로 설치가 진행됩니다.</p>
-          </div>
-        </div>
-
-        <div class="faq-item reveal delay-2">
-          <div class="faq-question">
-            <span>데이터가 외부 서버로 전송되나요? (외부 통신 안내)</span>
-            <i data-lucide="chevron-down" class="faq-arrow"></i>
-          </div>
-          <div class="faq-answer">
-            <p>개인 커미션 내역, 가계부, 일정 및 메모는 100% 사용자의 PC 내부(SQLite DB)에만 저장되며 외부 수집 서버는 존재하지 않습니다. 다만 <strong>[실시간 환율 조회]</strong> 및 <strong>[Gemini AI 기능 이용 (BYOK)]</strong> 시에만 해당 공식 서비스와 최소한의 필수 외부 통신이 이루어집니다.</p>
-          </div>
-        </div>
-
-        <div class="faq-item reveal delay-3">
-          <div class="faq-question">
-            <span>AI 기능 사용에 비용이 드나요?</span>
-            <i data-lucide="chevron-down" class="faq-arrow"></i>
-          </div>
-          <div class="faq-answer">
-            <p>구글에서 무료 발급받은 Gemini API 키를 등록(BYOK)하여 기본 제공 한도로 사용합니다.</p>
-          </div>
-        </div>
-
-        <div class="faq-item reveal delay-4">
-          <div class="faq-question">
-            <span>지원되는 운영체제는 무엇인가요?</span>
-            <i data-lucide="chevron-down" class="faq-arrow"></i>
-          </div>
-          <div class="faq-answer">
-            <p>Windows 10 / 11 환경을 지원합니다.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Banner -->
-  <section class="cta-section">
-    <div class="container">
-      <div class="cta-card reveal">
-        <div class="cta-content">
-          <h2>지금 바로 시작해 보세요</h2>
-          <div class="cta-buttons">
-            <a href="https://github.com/zx3519-star/horang-releases/releases/latest/download/horang-0.101.3-setup.exe" class="btn btn-hero-primary">
-              <i data-lucide="download"></i>
-              <span>Windows용 다운로드 (.exe)</span>
-            </a>
-          </div>
-        </div>
-        <div class="cta-mascot-box">
-          <img src="mascot.svg" alt="마스코트" class="cta-mascot-img">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-container">
-      <div class="footer-brand">
-        <img src="icon.png" alt="호랑 로고" class="footer-icon">
-        <span>Horang</span>
-      </div>
-      <p class="footer-copy">© 2026 Horang.</p>
-      <div class="footer-links">
-        <a href="terms.html">이용 정책</a>
-        <a href="privacy.html">개인정보 처리방침</a>
-        <a href="https://github.com/zx3519-star/horang-releases" target="_blank">GitHub Repository</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="script.js?v=1.0.5"></script>
-  <script>
-    if (window.lucide) {
-      lucide.createIcons();
-    }
-  </script>
-</body>
+    <script src="script.js?v=1.0.5"></script>
+    <script>
+      if (window.lucide) {
+        lucide.createIcons()
+      }
+    </script>
+  </body>
 </html>
