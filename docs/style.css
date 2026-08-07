@@ -166,8 +166,8 @@ body {
 .brand-icon {
   width: 36px;
   height: 36px;
-  border-radius: var(--radius-tag);
-  border: 2px solid var(--ink);
+  /* border-radius: var(--radius-tag); */
+  /* border: 2px solid var(--ink); */
 }
 .brand-name {
   font-family: var(--font-display);
@@ -222,16 +222,18 @@ body {
   padding-bottom: 60px;
 }
 .hero-container {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 48px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 48px;
 }
 .hero-left {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;
+  text-align: center;
   gap: 20px;
 }
 
@@ -685,11 +687,11 @@ body {
   text-wrap: balance;
 }
 .cta-mascot-box {
-  width: 120px;
-  height: 120px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
-  background: var(--tiger);
-  border: 3px solid var(--ink);
+  /* background: var(--tiger);
+  border: 3px solid var(--ink); */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -795,13 +797,6 @@ body {
 
 /* Responsive */
 @media (max-width: 900px) {
-  .hero-container {
-    grid-template-columns: 1fr;
-  }
-  .hero-left {
-    align-items: center;
-    text-align: center;
-  }
   .hero-title {
     font-size: 2.3rem;
   }
