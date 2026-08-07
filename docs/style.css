@@ -669,7 +669,7 @@ body {
   border: 1px solid var(--border-strong);
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 
+  box-shadow:
     0 24px 60px rgba(0, 0, 0, 0.12),
     0 0 40px rgba(255, 138, 61, 0.12);
   transition: var(--transition);
@@ -677,7 +677,7 @@ body {
 
 .app-window-frame:hover {
   transform: translateY(-4px);
-  box-shadow: 
+  box-shadow:
     0 32px 70px rgba(0, 0, 0, 0.18),
     0 0 50px rgba(255, 138, 61, 0.2);
 }
@@ -704,9 +704,15 @@ body {
   border-radius: 50%;
 }
 
-.window-controls .control.red { background: #ff5f56; }
-.window-controls .control.yellow { background: #ffbd2e; }
-.window-controls .control.green { background: #27c93f; }
+.window-controls .control.red {
+  background: #ff5f56;
+}
+.window-controls .control.yellow {
+  background: #ffbd2e;
+}
+.window-controls .control.green {
+  background: #27c93f;
+}
 
 .window-title {
   position: absolute;
@@ -783,8 +789,14 @@ body {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .showcase-grid {
