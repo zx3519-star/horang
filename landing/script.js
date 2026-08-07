@@ -1,52 +1,8 @@
-// Horang Landing Page Script: Dark Theme & Scroll Reveal Animations
+// Horang Landing Page Script: Scroll Reveal, FAQ, Showcase Tabs, Latest Release Sync
 
 document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
-  // 1. Dark Theme Auto-Detection & Toggle Logic
-  // ==========================================
-  const themeToggleBtn = document.getElementById('themeToggleBtn')
-  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)')
-
-  function getSavedTheme() {
-    return localStorage.getItem('horang_theme')
-  }
-
-  function applyTheme(theme) {
-    if (theme === 'dark') {
-      document.documentElement.setAttribute('data-theme', 'dark')
-    } else {
-      document.documentElement.removeAttribute('data-theme')
-    }
-  }
-
-  // Initial Theme Setup
-  const savedTheme = getSavedTheme()
-  if (savedTheme) {
-    applyTheme(savedTheme)
-  } else if (systemPrefersDark.matches) {
-    applyTheme('dark')
-  }
-
-  // Listen to OS system color preference changes if no manual override
-  systemPrefersDark.addEventListener('change', (e) => {
-    if (!getSavedTheme()) {
-      applyTheme(e.matches ? 'dark' : 'light')
-    }
-  })
-
-  // Manual Toggle Button
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', () => {
-      const currentTheme = document.documentElement.getAttribute('data-theme')
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark'
-
-      applyTheme(newTheme)
-      localStorage.setItem('horang_theme', newTheme)
-    })
-  }
-
-  // ==========================================
-  // 2. Scroll Reveal Animations (IntersectionObserver)
+  // 1. Scroll Reveal Animations (IntersectionObserver)
   // ==========================================
   const revealElements = document.querySelectorAll('.reveal')
 
@@ -84,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 50)
 
   // ==========================================
-  // 3. FAQ Accordion Logic (Using 'faq-open' to prevent collision with scroll reveal 'active')
+  // 2. FAQ Accordion Logic (Using 'faq-open' to prevent collision with scroll reveal 'active')
   // ==========================================
   const faqItems = document.querySelectorAll('.faq-item')
   faqItems.forEach((item) => {
@@ -112,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   // ==========================================
-  // 4. App Showcase Tabs & Lightbox Zoom Logic
+  // 3. App Showcase Tabs & Lightbox Zoom Logic
   // ==========================================
   const tabBtns = document.querySelectorAll('.tab-btn')
   const showcasePanels = document.querySelectorAll('.showcase-panel')
@@ -159,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  // 5. Latest Release Auto-Sync
+  // 4. Latest Release Auto-Sync
   // ==========================================
   // 다운로드 링크/버전 표시를 GitHub 릴리즈 저장소의 실제 최신 릴리즈에서 매번 가져와서
   // 채운다. HTML에 박아둔 버전 번호는 JS가 실패했을 때(오프라인, API 레이트리밋 등)를 위한

@@ -14,14 +14,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Jua&family=Fredoka:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
 
     <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <link rel="stylesheet" href="style.css?v=1.1.0" />
+    <link rel="stylesheet" href="style.css?v=2.0.0" />
   </head>
   <body>
     <!-- Navigation -->
@@ -40,51 +40,6 @@
         </nav>
 
         <div class="nav-actions">
-          <!-- Theme Toggle Button -->
-          <button
-            id="themeToggleBtn"
-            class="theme-toggle-btn"
-            aria-label="테마 전환"
-            title="테마 전환"
-          >
-            <svg
-              class="icon-moon"
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
-            </svg>
-            <svg
-              class="icon-sun"
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <circle cx="12" cy="12" r="4" />
-              <path d="M12 2v2" />
-              <path d="M12 20v2" />
-              <path d="m4.93 4.93 1.41 1.41" />
-              <path d="m17.66 17.66 1.41 1.41" />
-              <path d="M2 12h2" />
-              <path d="M20 12h2" />
-              <path d="m6.34 17.66-1.41 1.41" />
-              <path d="m19.07 4.93-1.41 1.41" />
-            </svg>
-          </button>
-
           <a
             href="https://github.com/zx3519-star/horang-releases/releases/latest"
             class="btn btn-primary"
@@ -99,40 +54,59 @@
 
     <!-- Hero Section -->
     <section class="hero reveal">
-      <div class="container hero-container">
-        <div class="hero-badge">
-          <img src="mascot.svg" alt="도우미" class="badge-mascot-img" />
-          <span>Horang Desktop</span>
-        </div>
-        <h1 class="hero-title">프리랜서를 위한<br />커미션 정산 워크스페이스</h1>
-        <p class="hero-desc">커미션 관리, 통계, 고객 관리, 가계부, 일정관리까지 한 번에</p>
+      <div class="container">
+        <div class="hero-container">
+          <div class="hero-left">
+            <div class="hero-badge">
+              <img src="mascot.svg" alt="호랑이" class="badge-mascot-img" />
+              <span>Horang Desktop</span>
+            </div>
+            <h1 class="hero-title">
+              프리랜서 일러스트레이터의<br /><span class="hl">커미션 장부</span>
+            </h1>
+            <p class="hero-desc">커미션 관리, 통계, 고객 관리, 가계부, 일정관리까지 한 번에</p>
 
-        <div class="hero-cta-group">
-          <a
-            href="https://github.com/zx3519-star/horang-releases/releases/latest"
-            class="btn btn-hero-primary"
-            data-download-link
-          >
-            <i data-lucide="download"></i>
-            <span>Windows용 다운로드 (.exe)</span>
-          </a>
-        </div>
+            <div class="hero-cta-group">
+              <a
+                href="https://github.com/zx3519-star/horang-releases/releases/latest"
+                class="btn btn-hero-primary"
+                data-download-link
+              >
+                <i data-lucide="download"></i>
+                <span>Windows용 다운로드 (.exe)</span>
+              </a>
+            </div>
 
-        <!-- SmartScreen Reassurance Notice & Network Transparency -->
-        <div class="download-notice">
-          <i data-lucide="info" class="notice-icon"></i>
-          <span
-            >코드 서명 미적용으로 인한 <strong>Windows SmartScreen 경고창</strong>이 표시될 수
-            있습니다. 개인 데이터는 PC 내부에만 저장되며,
-            <u>실시간 환율 조회 및 Gemini AI 사용 시에만 필수 외부 통신</u>이 진행되는 안전한
-            프로그램입니다. (설치 시 <u>[추가 정보] → [실행]</u> 클릭)</span
-          >
-        </div>
+            <!-- SmartScreen Reassurance Notice & Network Transparency -->
+            <div class="download-notice">
+              <i data-lucide="info" class="notice-icon"></i>
+              <span
+                >코드 서명 미적용으로 인한 <strong>Windows SmartScreen 경고창</strong>이 표시될 수
+                있습니다. 개인 데이터는 PC 내부에만 저장되며,
+                <u>실시간 환율 조회 및 Gemini AI 사용 시에만 필수 외부 통신</u>이 진행되는 안전한
+                프로그램입니다. (설치 시 <u>[추가 정보] → [실행]</u> 클릭)</span
+              >
+            </div>
 
-        <div class="hero-stats">
-          <div class="stat-item"><i data-lucide="shield-check"></i> 100% 로컬 데이터 저장</div>
-          <div class="stat-item"><i data-lucide="sparkles"></i> Gemini AI 지원</div>
-          <div class="stat-item"><i data-lucide="coins"></i> 수수료 &amp; 정산 관리</div>
+            <div class="hero-stats">
+              <div class="stat-item"><i data-lucide="shield-check"></i> 100% 로컬 데이터 저장</div>
+              <div class="stat-item"><i data-lucide="sparkles"></i> Gemini AI 지원</div>
+              <div class="stat-item"><i data-lucide="coins"></i> 수수료 &amp; 정산 관리</div>
+            </div>
+          </div>
+
+          <div class="hero-right">
+            <div class="hero-mascot-stamp">
+              <img src="mascot.svg" alt="호랑 마스코트" />
+            </div>
+            <div class="hero-receipt mono-num">
+              <div class="hero-receipt-row"><span>캐릭터 커미션</span> <b>₩45,000</b></div>
+              <div class="hero-receipt-row"><span>배경 옵션</span> <b>₩12,000</b></div>
+              <div class="hero-receipt-row"><span>페이팔 수수료</span> <b>-₩2,140</b></div>
+              <div class="hero-receipt-divider"></div>
+              <div class="hero-receipt-total"><span>실수령액</span> <span>₩54,860</span></div>
+            </div>
+          </div>
         </div>
 
         <!-- Hero App Preview Mockup -->
@@ -154,10 +128,13 @@
       </div>
     </section>
 
+    <div class="stripe-divider" aria-hidden="true"></div>
+
     <!-- Feature Grid Section -->
     <section id="features" class="section">
       <div class="container">
         <div class="section-header reveal">
+          <span class="section-eyebrow">FEATURES</span>
           <h2 class="section-title">주요 기능</h2>
         </div>
 
@@ -201,6 +178,7 @@
     <section id="screens" class="section screens-section">
       <div class="container">
         <div class="section-header reveal">
+          <span class="section-eyebrow">APP TOUR</span>
           <h2 class="section-title">실제 앱 화면 둘러보기</h2>
           <p class="section-desc">작가님들의 실제 커미션 워크플로우에 맞춘 깔끔하고 직관적인 UX</p>
         </div>
@@ -405,6 +383,7 @@
     <section id="faq" class="section">
       <div class="container">
         <div class="section-header reveal">
+          <span class="section-eyebrow">FAQ</span>
           <h2 class="section-title">자주 묻는 질문</h2>
         </div>
 
@@ -489,6 +468,8 @@
       </div>
     </section>
 
+    <div class="stripe-divider" aria-hidden="true"></div>
+
     <!-- Footer -->
     <footer class="footer">
       <div class="container footer-container">
@@ -513,7 +494,7 @@
       <img class="lightbox-content" id="lightboxImg" alt="확대 이미지" />
     </div>
 
-    <script src="script.js?v=1.1.0"></script>
+    <script src="script.js?v=2.0.0"></script>
     <script>
       if (window.lucide) {
         lucide.createIcons()
