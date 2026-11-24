@@ -64,7 +64,7 @@
 
     <div class="privacy-container">
       <h1>개인정보 처리방침</h1>
-      <p class="privacy-subtitle">마지막 업데이트: 2026년 11월 4일</p>
+      <p class="privacy-subtitle">마지막 업데이트: 2026년 11월 24일</p>
 
       <p>
         이 방침은 호랑(Horang) PC 앱(Windows)과 모바일 앱(Android, 패키지 이름 com.horang.app)에
@@ -112,18 +112,63 @@
         개발자는 이 데이터에 접근할 수 없습니다.
       </p>
 
-      <h2>5. 데이터 관리와 삭제</h2>
+      <h2>5. 구글 캘린더 보내기 (선택)</h2>
+      <p>
+        사용자가 설정에서 구글 캘린더 보내기를 켜고 구글 계정으로 로그인하면, 호랑은 사용자의 구글 캘린더에
+        "호랑 - 프로필 이름" 보조 캘린더를 하나 만들고(calendar.app.created 권한) 그 캘린더 안에만 커미션 마감일과
+        일정 탭의 일정을 만들고 고치고 지웁니다. 보내는 정보는 일정 제목(커미션 제목·일정 제목)과 날짜·시간뿐이며,
+        고객 이름·금액·메모는 보내지 않습니다. 사용자의 다른 캘린더와 일정은 읽거나 바꾸지 않습니다.
+        로그인 때 연결된 계정을 화면에 보여 주기 위해 이메일 주소(openid, email 권한)를 받으며, 이는 사용자 기기에만 저장됩니다.
+        로그인 열쇠는 사용자 기기 안에 암호화해 보관하고 개발자 서버나 다른 곳으로 보내지 않습니다.
+      </p>
+      <p>
+        Horang's use and transfer of information received from Google APIs to any other app will adhere to the
+        <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>,
+        including the Limited Use requirements.
+      </p>
+
+      <h2>6. 데이터 관리와 삭제</h2>
       <p>
         데이터는 사용자의 기기와 사용자 본인의 구글 드라이브에만 있으므로 사용자가 직접 관리합니다. 앱 안에서
         프로필을 지우거나 앱을 삭제하면 그 기기의 데이터가 지워집니다. 구글 드라이브에 올린 동기화 기록은 앱에서
         드라이브 동기화를 끄거나, 구글 드라이브 설정의 "앱 관리"에서 호랑의 숨은 앱 데이터를 삭제해 지울 수 있습니다.
+        구글 캘린더로 보낸 일정은 구글 캘린더에서 "호랑" 캘린더를 삭제하면 모두 지워집니다. 앱의 구글 연결은 앱 설정에서
+        해제하거나, 구글 계정의 "타사 앱 및 서비스"에서 호랑을 삭제해 끊을 수 있습니다.
       </p>
 
-      <h2>6. 아동</h2>
+      <h2>7. 아동</h2>
       <p>호랑은 성인 창작자를 위한 업무 도구이며, 아동을 대상으로 하지 않습니다.</p>
 
-      <h2>7. 문의</h2>
+      <h2>8. 문의</h2>
       <p>개인정보 관련 문의: <a href="mailto:zx3519@gmail.com">zx3519@gmail.com</a></p>
+
+      <h2 lang="en">Summary in English</h2>
+      <div lang="en">
+        <p>
+          Horang (Windows desktop app and Android app com.horang.app) has no developer-run server and does not collect
+          your data. Everything you enter stays on your devices.
+        </p>
+        <p>
+          <strong>Google Calendar (optional).</strong> If you turn on "Send to Google Calendar" and sign in with Google,
+          Horang creates one secondary calendar named "Horang - &lt;profile&gt;" using the
+          <code>calendar.app.created</code> scope and creates, updates and deletes events only in that calendar. Only
+          event titles (commission and schedule titles) and dates/times are sent; client names, prices and notes are not
+          sent. Horang never reads or changes your other calendars. Your email address (<code>openid email</code>) is used
+          only to show which account is connected, on your device. Sign-in tokens are stored encrypted on your device and
+          are never sent to us or any third party. Delete the "Horang" calendar in Google Calendar to remove all sent
+          events, and disconnect in the app or in your Google Account's third-party connections.
+        </p>
+        <p>
+          <strong>Google Drive (optional).</strong> Device sync can store encrypted change records in the hidden app data
+          folder of your own Google Drive (<code>drive.appdata</code>); Horang cannot read your other Drive files.
+        </p>
+        <p>
+          Horang's use and transfer of information received from Google APIs to any other app will adhere to the
+          <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>,
+          including the Limited Use requirements.
+        </p>
+        <p>Contact: <a href="mailto:zx3519@gmail.com">zx3519@gmail.com</a></p>
+      </div>
     </div>
   </body>
 </html>
